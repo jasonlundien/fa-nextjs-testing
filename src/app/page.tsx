@@ -1,9 +1,34 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image'
+import styles from './page.module.css'
+import Head from 'next/head';
+
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
+import '@fortawesome/fontawesome-svg-core/styles.css'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <Head>
+        <title>Electrifyze</title>
+        <meta
+          name="description"
+          content="Electrifyze - Home"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+        <link
+          rel="icon"
+          href="/favicon.ico"
+        />
+      </Head>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -15,7 +40,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{" "}
+            By{' '}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -26,6 +51,17 @@ export default function Home() {
             />
           </a>
         </div>
+      </div>
+
+      <div style={{ textAlign: 'center' }}>
+        <h2>Font Awesome Icons</h2>
+        <hr />
+        <FontAwesomeIcon
+          icon={faUser}
+          size="5x"
+          shake
+          style={{ color: 'tomato', margin: '15px' }} // Change color to red
+        />
       </div>
 
       <div className={styles.center}>
@@ -85,11 +121,9 @@ export default function Home() {
           <h2>
             Deploy <span>-&gt;</span>
           </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
+          <p>Instantly deploy your Next.js site to a shareable URL with Vercel.</p>
         </a>
       </div>
     </main>
-  );
+  )
 }
