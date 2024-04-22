@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import Head from 'next/head';
+import Head from 'next/head'
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
@@ -9,7 +9,7 @@ config.autoAddCss = false
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faDog, faUser, faGasPump } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   return (
@@ -57,9 +57,21 @@ export default function Home() {
         <h2>Font Awesome Icons</h2>
         <hr />
         <FontAwesomeIcon
-          icon={faUser}
+          icon={faDog}
           size="5x"
           shake
+          style={{ color: 'tomato', margin: '15px' }} // Change color to red
+        />
+        <FontAwesomeIcon
+          icon={faUser}
+          size="5x"
+          spin
+          style={{ color: 'tomato', margin: '15px' }} // Change color to red
+        />
+        <FontAwesomeIcon
+          icon={faGasPump}
+          size="5x"
+          bounce
           style={{ color: 'tomato', margin: '15px' }} // Change color to red
         />
       </div>
